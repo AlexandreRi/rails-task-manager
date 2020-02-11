@@ -1,0 +1,14 @@
+<h2><%= @task.title %></h2>
+<p><%= @task.details %></p>
+
+<div class="div">
+<li><%= check_box_tag @task.title, 1, @task.completed %></li>
+<li class="li"><%= @answer %></li>
+</div>
+
+<li><%= link_to "Back to list", tasks_path(@tasks) %></li>
+
+<button><%= link_to "Edit this task", edit_path(@task) %></button>
+
+<button><%= link_to "Delete #{@task.title}", task_path(@task), method: :delete, data: { confirm: "Are you sure?" } %></button>
+
